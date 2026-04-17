@@ -57,7 +57,7 @@ export default function HomePage() {
       <ServicesSection showEyebrow={false} />
       <WorkSection />
       <ProcessSection />
-      <AboutSection />
+     
       <FaqSection
         title="Common questions about"
         accent="ABDANIX"

@@ -426,63 +426,7 @@ export function ServicesSection({ compact = false, showEyebrow = true }) {
 export function WorkSection() {
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 4);
 
-  return (
-    <section className="section editorial-section" id="work">
-      <div className="container">
-        <div className="section-heading center reveal show">
-          <div className="eyebrow"><span className="dot"></span> Previous Work</div>
-          <h2>Projects That Reflect <span className="accent-text">Real Business Impact</span></h2>
-          <p>
-            We build scalable web platforms, AI-powered systems, and mobile
-            applications designed for real-world usage, performance, and growth.
-          </p>
-        </div>
-
-        <div className="home-portfolio-grid reveal show">
-          {featuredProjects.map((project) => (
-            <article className="home-portfolio-card" key={project.title}>
-              <div className="portfolio-card-top">
-                <div className="portfolio-icon-wrap">
-                  <PortfolioIcon type={project.icon} />
-                </div>
-                <span className="portfolio-index">Project {project.id}</span>
-              </div>
-
-              <div className="portfolio-copy compact">
-                <span className="portfolio-category">{project.category}</span>
-                <h3>{project.title}</h3>
-                <p>{project.impact}</p>
-              </div>
-
-              <div className="portfolio-actions compact">
-                {project.links.map((link) =>
-                  link.internal ? (
-                    <Link className="portfolio-link secondary" key={link.label} to={link.href}>
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      className="portfolio-link"
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  )
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="view-all reveal show">
-          <Link className="btn-primary" to="/projects">View Full Portfolio</Link>
-        </div>
-      </div>
-    </section>
-  );
+  return (null);
 }
 
 export function PortfolioShowcaseSection({ introAligned = "left", showEyebrow = true }) {
