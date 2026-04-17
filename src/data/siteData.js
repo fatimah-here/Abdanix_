@@ -227,7 +227,7 @@ export const projects = [
       "Workflow automation",
     ],
     tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    image: "/assets/projects/enterprise-crm-platform.svg",
+    image: "/assets/projects/enterprise-crm-platform.PNG",
     links: [
       { label: "View Reference", href: "https://www.zoho.com/crm/" },
       { label: "Build Similar System", href: "/contact", internal: true },
@@ -251,9 +251,12 @@ export const projects = [
       "Reports and analytics",
     ],
     tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    image: "/assets/projects/customer-support-ticketing-platform.svg",
+    image: "/assets/projects/customer-support-ticketing-platform.PNG",
     links: [
-      { label: "View Reference", href: "https://www.freshworks.com/freshdesk/" },
+      {
+        label: "View Reference",
+        href: "https://www.freshworks.com/freshdesk/",
+      },
       { label: "Build Similar System", href: "/contact", internal: true },
     ],
   },
@@ -275,7 +278,7 @@ export const projects = [
       "Usage monitoring",
     ],
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "WebSockets"],
-    image: "/assets/projects/real-time-device-testing-platform.svg",
+    image: "/assets/projects/real-time-device-testing-platform.PNG",
     links: [
       { label: "View Reference", href: "https://www.browserstack.com/" },
       { label: "Build Similar System", href: "/contact", internal: true },
@@ -299,7 +302,7 @@ export const projects = [
       "CRM / automation integration",
     ],
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "AI Integrations"],
-    image: "/assets/projects/ai-chat-automation-platform.svg",
+    image: "/assets/projects/ai-chat-automation-platform.PNG",
     links: [
       { label: "View Reference", href: "https://www.gupshup.io/" },
       { label: "Build Similar System", href: "/contact", internal: true },
@@ -314,18 +317,31 @@ export const projects = [
     title: "Checkin - Social App",
     description:
       "A social networking app with real-time features and location matching to help users connect nearby and discover social opportunities.",
-    impact: "Social engagement flows built around proximity and real-time activity",
+    impact:
+      "Social engagement flows built around proximity and real-time activity",
     features: [
       "Real-time interactions",
       "Location matching",
       "Push notifications",
       "Social discovery",
     ],
-    tags: ["Flutter", "Firebase", "Real-time DB", "Location Services", "Push Notifications"],
+    tags: [
+      "Flutter",
+      "Firebase",
+      "Real-time DB",
+      "Location Services",
+      "Push Notifications",
+    ],
     image: "/assets/projects/checkin-social-app.svg",
     links: [
-      { label: "App Store", href: "https://apps.apple.com/au/app/checkin-meet-new-people/id6736611885" },
-      { label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.checkin.org" },
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/au/app/checkin-meet-new-people/id6736611885",
+      },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.checkin.org",
+      },
     ],
   },
   {
@@ -337,17 +353,27 @@ export const projects = [
     title: "FixIt Hub - Services Platform",
     description:
       "A role-based services platform connecting service providers with customers through booking workflows, tracking, and multi-role management.",
-    impact: "Marketplace operations organized through booking and service workflows",
+    impact:
+      "Marketplace operations organized through booking and service workflows",
     features: [
       "Role-based user system",
       "Service booking flow",
       "Real-time tracking",
       "Payment integration",
     ],
-    tags: ["Flutter", "Node.js", "Role Management", "Booking System", "Payment Integration"],
+    tags: [
+      "Flutter",
+      "Node.js",
+      "Role Management",
+      "Booking System",
+      "Payment Integration",
+    ],
     image: "/assets/projects/fixit-hub-services-platform.svg",
     links: [
-      { label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.fixit.org" },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.fixit.org",
+      },
       { label: "Book Similar App", href: "/contact", internal: true },
     ],
   },
@@ -367,10 +393,19 @@ export const projects = [
       "Fare calculation",
       "Payment gateway",
     ],
-    tags: ["Flutter", "Google Maps", "Real-time Tracking", "Payment Gateway", "GPS Navigation"],
+    tags: [
+      "Flutter",
+      "Google Maps",
+      "Real-time Tracking",
+      "Payment Gateway",
+      "GPS Navigation",
+    ],
     image: "/assets/projects/cas-cars-ride-hailing.svg",
     links: [
-      { label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.cascarstaxi" },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.cascarstaxi",
+      },
       { label: "Book Similar App", href: "/contact", internal: true },
     ],
   },
@@ -390,11 +425,23 @@ export const projects = [
       "Payment integration",
       "Apple Pay / card support",
     ],
-    tags: ["Flutter", "Real-time Tracking", "Booking System", "Payment Integration", "Apple Pay"],
+    tags: [
+      "Flutter",
+      "Real-time Tracking",
+      "Booking System",
+      "Payment Integration",
+      "Apple Pay",
+    ],
     image: "/assets/projects/peter-pan-taxis.svg",
     links: [
-      { label: "App Store", href: "https://apps.apple.com/gb/app/peter-pan-taxis/id1482382718" },
-      { label: "Play Store", href: "https://play.google.com/store/apps/details?id=com.icabbi.peterpan.taxis" },
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/gb/app/peter-pan-taxis/id1482382718",
+      },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.icabbi.peterpan.taxis",
+      },
     ],
   },
 ];
