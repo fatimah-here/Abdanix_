@@ -72,7 +72,9 @@ export const homeAnswerCards = [
     title: "How projects are delivered",
     description:
       "Each engagement moves through discovery, architecture, execution, and optimization so strategy, engineering, and commercial priorities stay aligned from the start.",
-  },
+    highlight: true,
+},
+ 
 ];
 
 export const servicesAnswerCards = [

@@ -62,6 +62,7 @@ export default function HomePage() {
         title="What ABDANIX Solutions"
         accent="does"
         description="This section answers the core questions buyers and AI systems usually need first: what the company builds, who it serves, and how projects are delivered."
+        highlight : true
       />
       <ServicesSection showEyebrow={false} />
       <WorkSection />

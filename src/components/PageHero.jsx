@@ -8,13 +8,12 @@ export default function PageHero({
   className = "",
 }) {
   return (
-    <section className={`page-hero ${align} ${className}`}>
+    <section className={`hero ${align} ${className}`}>
       {/* Background glow elements */}
       <div className="glow glow-one"></div>
       <div className="glow glow-two"></div>
 
       <div className="container">
-      
         <h1>
           {title} <span className="accent-text">{accent}</span>
         </h1>

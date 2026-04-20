@@ -346,14 +346,17 @@ export function AnswerGridSection({
     <section className="section editorial-section answer-section">
       <div className="container">
         <div className="section-heading center reveal show">
-          <div className="eyebrow"><span className="dot"></span>{eyebrow}</div>
+
           <h2>{title} <span className="accent-text">{accent}</span></h2>
           <p>{description}</p>
         </div>
 
         <div className="grid answer-grid">
           {items.map((item) => (
-            <article className="answer-card reveal show" key={item.title}>
+            <article
+              className={`answer-card reveal show ${item.highlight ? "highlight" : ""}`}
+              key={item.title}
+            >
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>
@@ -375,7 +378,7 @@ export function FaqSection({
     <section className="section editorial-section faq-section">
       <div className="container">
         <div className="section-heading center reveal show">
-          <div className="eyebrow"><span className="dot"></span>{eyebrow}</div>
+
           <h2>{title} <span className="accent-text">{accent}</span></h2>
           <p>{description}</p>
         </div>
@@ -399,9 +402,7 @@ export function ServicesSection({ compact = false, showEyebrow = true }) {
     <section className="section editorial-section" id="services">
       <div className="container">
         <div className="section-heading section-heading-left services-heading reveal show">
-          {showEyebrow ? (
-            <div className="eyebrow"><span className="dot"></span> Core Services</div>
-          ) : null}
+
           <h2>Services Built for <span className="accent-text">Business Growth</span></h2>
           <p>From technical execution to growth strategy, ABDANIX provides integrated digital services that help brands launch, optimize and scale faster.</p>
         </div>
@@ -444,7 +445,6 @@ export function ProcessSection() {
     <section className="section editorial-section process-section">
       <div className="container framework">
         <div className="section-heading center reveal show">
-          <div className="eyebrow"><span className="dot"></span> Delivery Framework</div>
           <h2>How We <span className="accent-text">Deliver</span></h2>
           <p>A structured delivery model that keeps strategy, architecture, execution, and optimization aligned from day one.</p>
         </div>
@@ -502,37 +502,37 @@ export function ProcessSection() {
 export function AboutSection({ showTeam = false }) {
   return (
     <>
-       <section className="section editorial-section py-20" id="about">
-      <div className="container">
+      <section className="section editorial-section py-20" id="about">
+        <div className="container">
 
-        <div className="section-heading center reveal show max-w-3xl mx-auto">
-          <h2>
-            Enterprise Thinking.{" "}
-            <span className="accent-text">Operational Precision.</span>
-          </h2>
-          <p>
-            ABDANIX combines engineering discipline with business strategy so
-            organizations can deploy digital systems that are reliable,
-            scalable, and commercially useful.
-          </p>
+          <div className="section-heading center reveal show max-w-3xl mx-auto">
+            <h2>
+              Enterprise Thinking.{" "}
+              <span className="accent-text">Operational Precision.</span>
+            </h2>
+            <p>
+              ABDANIX combines engineering discipline with business strategy so
+              organizations can deploy digital systems that are reliable,
+              scalable, and commercially useful.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {aboutPoints.map((point) => (
+              <article
+                className="about-card reveal show text-center p-6 rounded-xl shadow-sm"
+                key={point.title}
+              >
+                <div className="icon-badge">{point.code}</div>
+                <h3>{point.title}</h3>
+                <p>{point.description}</p>
+              </article>
+            ))}
+          </div>
+
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {aboutPoints.map((point) => (
-            <article
-              className="about-card reveal show text-center p-6 rounded-xl shadow-sm"
-              key={point.title}
-            >
-              <div className="icon-badge">{point.code}</div>
-              <h3>{point.title}</h3>
-              <p>{point.description}</p>
-            </article>
-          ))}
-        </div>
-
-      </div>
-    </section>
-     {showTeam && null}
+      </section>
+      {showTeam && null}
     </>
   );
 }
@@ -549,7 +549,7 @@ export function CtaSection({
     <section className="section editorial-section">
       <div className="container">
         <div className="cta-panel reveal show">
-          <div className="eyebrow"><span className="dot"></span>{eyebrow}</div>
+
           <h2>{title} <span className="accent-text">{accent}</span></h2>
           <p>{description}</p>
           <div className="hero-actions" style={{ justifyContent: "center" }}>
