@@ -4,7 +4,7 @@ export default function PageHero({
   accent,
   description,
   showEyebrow = true,
-  align = "left",
+  align = "center",
   className = "",
 }) {
   return (
