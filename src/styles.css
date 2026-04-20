@@ -651,7 +651,7 @@ main {
     position:relative;
     overflow:hidden;
     padding:138px 0 64px;
->>>>>>> 0babb7eee79b74db4cf081ecf429ecac23b0f7ca
+
 }
 
 .contact-page-hero {
@@ -830,22 +830,18 @@ main {
   grid-template-columns: 1fr 1fr;
   /* 2 columns only */
   gap: 22px;
-  max-width: 900px;   /* 👈 controls total width */
+  max-width: 800px;  
   margin: 0 auto;     
 
 }
 .answer-card{
     width: 100%;
-  max-width: 320px;   /* 👈 controls card size */
+  max-width: 700px;   /* 👈 controls card size */
   margin: 0 auto;   
-   padding: 20px 18px;  
-}
-
-.answer-card,
-.faq-item {
-  position: relative;
+   padding: 20px 18px;
+   position: relative;
   border-radius: 20px;
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .answer-card {
@@ -865,8 +861,7 @@ main {
   border-color: rgba(14, 165, 233, 0.25);
 }
 
-.answer-card::before,
-.faq-item::before {
+.answer-card::before {
   content: "";
   position: absolute;
   inset: 0 auto auto 0;
@@ -883,8 +878,7 @@ main {
   color: #0f172a;
 }
 
-.answer-card p,
-.faq-item p {
+.answer-card p {
   margin: 0;
   font-size: 13px;
   color: #64748b;
@@ -921,63 +915,128 @@ main {
 .answer-section .section-heading p {
   color: #64748b;
 }
-
-.faq-list {
-  display: grid;
-  gap: 14px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 .faq-item {
-  transition: border-color .22s ease, box-shadow .22s ease;
+  border-radius: 10px;
+}
+/* SECTION */
+.faq-section {
+  background: #ffffff;
+  padding-top: 60px;
 }
 
-.faq-item[open] {
-  border-color: rgba(56, 189, 248, .24);
-  box-shadow: 0 28px 54px -28px rgba(2, 132, 199, .24);
+.faq-section h2 {
+  color: #0a6cab;
 }
 
-.faq-item summary {
+.faq-section p {
+  color: #64748b;
+}
+
+/* TABS */
+.faq-tabs {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 24px;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.faq-tab {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.faq-tab.active {
+  background: #1c48ad;
+  color: #fff;
+  border-color: #1146c2;
+}
+
+.faq-tab:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* FAQ LIST */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* FAQ ITEM */
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+/* OPEN STATE (blue highlight like hero) */
+.faq-item[open] {
+  border-color: rgba(19, 166, 235, 0.4);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.15);
+}
+
+/* QUESTION */
+.faq-item summary {
   list-style: none;
   cursor: pointer;
-  color: #fff;
-  font-size: 16px;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* REMOVE DEFAULT ICON */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* PLUS ICON */
+.faq-item summary::after {
+  content: "+";
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 700;
-  line-height: 1.45;
+  transition: all 0.25s ease;
+}
+
+/* MINUS WHEN OPEN */
+.faq-item[open] summary::after {
+  content: "−";
+  background: var(--blue);
+  color: #fff;
+}
+
+/* ANSWER */
+.faq-item p {
+  padding: 0 18px 16px;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
 }
 
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-item summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, .12);
-  color: #38bdf8;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.faq-item[open] summary::after {
-  content: "-";
-}
-
-.faq-item p {
-  padding: 0 24px 24px;
-}
 
 .card h3,
 .project-card h3,

@@ -368,29 +368,39 @@ export function AnswerGridSection({
 }
 
 export function FaqSection({
-  eyebrow = "FAQ",
-  title = "Questions clients ask",
-  accent = "before starting",
-  description = "Straightforward answers help visitors qualify themselves faster and make the service offering easier to cite and summarize.",
+  title = "Frequently asked questions",
+  description = "These are the most commonly asked questions.",
   faqs = homeFaqs,
 }) {
   return (
-    <section className="section editorial-section faq-section">
+    <section className="section faq-section">
       <div className="container">
-        <div className="section-heading center reveal show">
 
-          <h2>{title} <span className="accent-text">{accent}</span></h2>
+        <div className="section-heading center">
+          <h2>{title}</h2>
           <p>{description}</p>
         </div>
 
-        <div className="faq-list reveal show">
+        {/* Tabs */}
+        <div className="faq-tabs">
+          <button className="faq-tab active">General</button>
+          <button className="faq-tab">Pricing</button>
+          <button className="faq-tab">Dashboard</button>
+          <button className="faq-tab">API</button>
+        </div>
+
+        {/* FAQ LIST */}
+        <div className="faq-list">
           {faqs.map((faq, index) => (
             <details className="faq-item" key={faq.question} open={index === 0}>
-              <summary>{faq.question}</summary>
+              <summary>
+                <span>{faq.question}</span>
+              </summary>
               <p>{faq.answer}</p>
             </details>
           ))}
         </div>
+
       </div>
     </section>
   );

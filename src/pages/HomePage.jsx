@@ -64,12 +64,12 @@ export default function HomePage() {
         description="This section answers the core questions buyers and AI systems usually need first: what the company builds, who it serves, and how projects are delivered."
         highlight : true
       />
-      <ServicesSection showEyebrow={false} />
+      <ServicesSection  />
       <WorkSection />
       <ProcessSection />
 
       <FaqSection
-        title="Common questions about"
+        title="FAQs"
         accent="ABDANIX"
         description="These answers summarize the company, its services, delivery model, and contact path in a format that is easier to quote, compare, and understand."
       />
