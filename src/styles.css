@@ -582,6 +582,20 @@ main{display:block}
 );
 }
 
+.services-page-hero {
+  position: relative;
+  padding: 138px 0 64px; 
+  background: 
+    linear-gradient(rgba(11, 18, 32, 0.60), rgba(8, 17, 31, 0.60)), 
+    url('/assets/images/service-hero.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.services-page-hero .glow {
+  opacity: 0.4;
+}
 .projects-page-hero{
   padding:180px 0 90px;
   background:

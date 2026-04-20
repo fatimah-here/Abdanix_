@@ -15,7 +15,7 @@ export default function ServicesPage() {
     <>
       <Seo {...seoPages.services} />
       <PageHero
-
+       className="services-page-hero"
         title="Digital delivery for"
         accent="growth-focused teams"
         description="ABDANIX provides websites, product builds, CRM workflows, custom software, SEO improvements, and AI integrations shaped around practical business outcomes."
