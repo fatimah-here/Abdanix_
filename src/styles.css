@@ -830,7 +830,15 @@ main {
   grid-template-columns: 1fr 1fr;
   /* 2 columns only */
   gap: 22px;
+  max-width: 900px;   /* 👈 controls total width */
+  margin: 0 auto;     
 
+}
+.answer-card{
+    width: 100%;
+  max-width: 320px;   /* 👈 controls card size */
+  margin: 0 auto;   
+   padding: 20px 18px;  
 }
 
 .answer-card,
@@ -890,6 +898,8 @@ main {
   color: #fff;
   border: none;
   box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
+  max-width: 380px;   /* 👈 bigger than others */
+  width: 100%;
 }
 
 .answer-card.highlight h3 {
