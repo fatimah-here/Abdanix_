@@ -347,10 +347,6 @@ export function AnswerGridSection({
     <section className="section editorial-section answer-section">
       <div className="container">
         <div className="section-heading center reveal show">
-<<<<<<< HEAD
-
-=======
->>>>>>> 713a9ee87f2937b7b5cf7dabf34e34adbb84ebe9
           <h2>{title} <span className="accent-text">{accent}</span></h2>
           <p>{description}</p>
         </div>
