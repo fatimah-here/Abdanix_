@@ -16,50 +16,47 @@ export default function HomePage() {
     <>
       <Seo {...seoPages.home} />
       <section className="hero hero-echo">
-  <div className="glow one"></div>
-  <div className="glow two"></div>
+        <div className="glow one"></div>
+        <div className="glow two"></div>
 
-  <div className="container hero-grid">
-    {/* LEFT CONTENT */}
-    <div className="hero-copy reveal show">
-      <div className="hero-badge">
-        <span className="dot"></span>
-        Salesforce CRM Partner
-      </div>
+        <div className="container hero-grid">
+          {/* LEFT CONTENT */}
+          <div className="hero-copy reveal show">
+            
 
-      <h1>
-        Unlock the full potential <br />
-        of your <span className="accent-text">Salesforce</span>
-      </h1>
+            <h1>
+              Unlock the full potential <br />
+              of your <span className="accent-text">Salesforce</span>
+            </h1>
 
-      <p>
-        Unlock Salesforce to streamline operations, enhance customer
-        relationships, and drive growth across your business.
-      </p>
+            <p>
+              Unlock Salesforce to streamline operations, enhance customer
+              relationships, and drive growth across your business.
+            </p>
 
-      <div className="hero-actions">
-        <Link className="btn-primary" to="/contact">
-          Schedule a free call
-        </Link>
-      </div>
+            <div className="hero-actions">
+              <Link className="btn-primary" to="/contact">
+                Schedule a free call
+              </Link>
+            </div>
 
-      {/* Rating row */}
-      <div className="hero-rating">
-        <span>Salesforce Rating ⭐⭐⭐⭐⭐</span>
-        <span>Certified Experts 👨‍💻👩‍💻</span>
-      </div>
-    </div>
+            {/* Rating row */}
+            <div className="hero-rating">
+              <span>Salesforce Rating ⭐⭐⭐⭐⭐</span>
+              <span>Certified Experts 👨‍💻👩‍💻</span>
+            </div>
+          </div>
 
-    {/* RIGHT VISUAL */}
-    <div className="hero-visual">
-      <div className="hero-circle"></div>
+          {/* RIGHT VISUAL */}
+          <div className="hero-visual">
+            <div className="hero-circle"></div>
 
-      <div className="hero-card">
-        <span>Intelligent case routing</span>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="hero-card">
+              <span>Intelligent case routing</span>
+            </div>
+          </div>
+        </div>
+      </section>
       <AnswerGridSection
         eyebrow="What We Build"
         title="What ABDANIX Solutions"
@@ -69,7 +66,7 @@ export default function HomePage() {
       <ServicesSection showEyebrow={false} />
       <WorkSection />
       <ProcessSection />
-     
+
       <FaqSection
         title="Common questions about"
         accent="ABDANIX"
