@@ -18,7 +18,6 @@ export default function ProjectsPage() {
         accent="real business use"
       />
       <AnswerGridSection
-        eyebrow="Portfolio Context"
         title="What these projects"
         accent="show"
         items={projectAnswerCards}
