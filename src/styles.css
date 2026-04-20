@@ -819,8 +819,10 @@ main {
 
 .answer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+  /* 2 columns only */
+  gap: 22px;
+
 }
 
 .answer-card,
@@ -831,18 +833,22 @@ main {
 }
 
 .answer-card {
- background: #ffffff;
+  background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 10px;
   padding: 22px 20px;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   transition: all 0.25s ease;
+  height: 100%;
+
 }
+
 .answer-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
   border-color: rgba(14, 165, 233, 0.25);
 }
+
 .answer-card::before,
 .faq-item::before {
   content: "";
@@ -864,12 +870,15 @@ main {
 .answer-card p,
 .faq-item p {
   margin: 0;
- font-size: 13px;
+  font-size: 13px;
   color: #64748b;
   line-height: 1.6;
 }
+
 .answer-card.highlight {
   background: linear-gradient(180deg, #0ea5e9, #0b2c5f);
+  grid-column: 2;
+  grid-row: 1 / span 2;
   color: #fff;
   border: none;
   box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
@@ -882,9 +891,11 @@ main {
 .answer-card.highlight p {
   color: rgba(255, 255, 255, 0.85);
 }
+
 .answer-section {
   background: linear-gradient(180deg, #f8fafc, #ffffff);
 }
+
 .answer-section .section-heading h2 {
   color: #0f172a;
 }
@@ -1893,7 +1904,7 @@ main {
 }
 
 .footer-eyebrow {
-  color:#b7d6f7;
+  color: #b7d6f7;
   font-size: 12px;
 }
 
@@ -2074,11 +2085,24 @@ main {
   }
 
   .answer-grid {
-     display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "leftTop right"
+      "leftBottom right";
+    gap: 22px;
   }
+.answer-card:nth-child(1) {
+  grid-area: leftTop;
+}
 
+.answer-card:nth-child(2) {
+  grid-area: leftBottom;
+}
+
+.answer-card.highlight {
+  grid-area: right;
+}
   .about-points {
     grid-template-columns: repeat(2, minmax(0, 245px));
     justify-content: center;
@@ -2341,5 +2365,11 @@ main {
   *::after {
     animation: none !important;
     transition: none !important
+  }
+}
+
+@media (max-width: 900px) {
+  .answer-card.highlight {
+    grid-row: span 1;
   }
 }
