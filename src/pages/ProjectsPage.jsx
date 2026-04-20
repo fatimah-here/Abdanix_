@@ -16,12 +16,11 @@ export default function ProjectsPage() {
       <PageHero
         title="Custom software projects with"
         accent="real business use"
-
       />
       <AnswerGridSection
+        eyebrow="Portfolio Context"
         title="What these projects"
         accent="show"
-        description="The portfolio is meant to show the kinds of systems ABDANIX can architect and deliver, not just visual samples without operational depth."
         items={projectAnswerCards}
       />
       <PortfolioShowcaseSection introAligned="center" showEyebrow={false} />
