@@ -336,17 +336,21 @@ function PortfolioSectionInner({ introAligned = "center", showEyebrow = true }) 
 }
 
 export function AnswerGridSection({
-  eyebrow = "Direct Answers",
+  eyebrow = "",
   title = "What ABDANIX",
+
   accent = "delivers",
-  description = "Clear answers make it easier for buyers, search engines, and AI systems to understand the company and its capabilities.",
+  description = "",
   items = homeAnswerCards,
 }) {
   return (
     <section className="section editorial-section answer-section">
       <div className="container">
         <div className="section-heading center reveal show">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 713a9ee87f2937b7b5cf7dabf34e34adbb84ebe9
           <h2>{title} <span className="accent-text">{accent}</span></h2>
           <p>{description}</p>
         </div>

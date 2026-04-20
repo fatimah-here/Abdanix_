@@ -15,13 +15,12 @@ export default function ServicesPage() {
     <>
       <Seo {...seoPages.services} />
       <PageHero
-        eyebrow="Services"
+
         title="Digital delivery for"
         accent="growth-focused teams"
         description="ABDANIX provides websites, product builds, CRM workflows, custom software, SEO improvements, and AI integrations shaped around practical business outcomes."
       />
       <AnswerGridSection
-        eyebrow="Capabilities"
         title="How ABDANIX"
         accent="supports growth"
         description="The service mix is designed to cover customer-facing experiences, internal operations, and the optimization work that helps a system compound after launch."
