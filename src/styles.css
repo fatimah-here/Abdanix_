@@ -733,7 +733,6 @@ main {
 
 .card,
 .project-card,
-.step-card,
 .about-card,
 .info-card,
 .contact-card,
@@ -763,7 +762,6 @@ main {
 
 .card:hover,
 .project-card:hover,
-.step-card:hover,
 .about-card:hover {
   transform: translateY(-6px);
   border-color: rgba(14, 165, 233, .35);
@@ -771,8 +769,7 @@ main {
 }
 
 .service-card .icon-badge,
-.about-card .icon-badge,
-.step-number {
+.about-card .icon-badge {
   width: 48px;
   height: 48px;
   display: inline-flex;
@@ -1058,7 +1055,6 @@ main {
 
 .card h3,
 .project-card h3,
-.step-card h3,
 .about-card h3,
 .info-card h3,
 .contact-card h3 {
@@ -1070,7 +1066,6 @@ main {
 
 .card p,
 .project-card p,
-.step-card p,
 .about-card p,
 .info-card p,
 .contact-card p,
@@ -1481,39 +1476,48 @@ main {
 .process-section .section-heading {
   margin-bottom: 44px
 }
-
 .step-card {
-  text-align: left;
-  padding: 30px 28px 26px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(15, 23, 42, .92), rgba(10, 20, 36, .96));
-  border: 1px solid rgba(56, 189, 248, .12);
-  box-shadow: 0 24px 48px -24px rgba(2, 132, 199, .18);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.step-card:hover {
+  transform: none;
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
 }
 
 .step-card h3 {
-  color: #fff;
-  font-size: 18px;
-  margin-bottom: 12px;
+  color: #0a6cab;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
 .step-card p {
-  color: #94a3b8;
+  color: #64748b;
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .step-number {
-  width: 64px;
-  height: 64px;
-  margin-inline: 0;
-  margin-bottom: 26px;
-  border-radius: 20px;
-  background: rgba(56, 189, 248, .12);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, .16);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #0f70a5;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  border: none;
 }
-
 .tech-stage {
   position: relative;
   margin-top: 28px;
@@ -1898,7 +1902,7 @@ main {
   overflow:hidden;
   padding:28px 24px 20px;
   border-radius:24px;
-background: linear-gradient(
+  background: linear-gradient(
     180deg,
     rgba(142, 207, 233, 0.5) 0%,   /* invisible at top */
     rgb(109, 206, 245) 20%,        /* slight blend */

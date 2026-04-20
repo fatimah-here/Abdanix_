@@ -455,7 +455,7 @@ export function ProcessSection() {
     <section className="section editorial-section process-section">
       <div className="container framework">
         <div className="section-heading center reveal show">
-          <h2>How We <span className="accent-text">Deliver</span></h2>
+          <h2> <span className="accent-text">How We Deliver</span></h2>
           <p>A structured delivery model that keeps strategy, architecture, execution, and optimization aligned from day one.</p>
         </div>
         <div className="framework-line"></div>
