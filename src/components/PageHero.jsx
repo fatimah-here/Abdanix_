@@ -17,7 +17,7 @@ export default function PageHero({
         {showEyebrow && eyebrow && (
           <div className="eyebrow">
             <span className="dot"></span>
-            {eyebrow}
+           
           </div>
         )}
 
