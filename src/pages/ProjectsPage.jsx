@@ -1,7 +1,6 @@
 import PageHero from "../components/PageHero";
 import Seo from "../components/Seo";
 import {
-  AnswerGridSection,
   FaqSection,
   PortfolioShowcaseSection,
   projectAnswerCards,
@@ -16,11 +15,6 @@ export default function ProjectsPage() {
       <PageHero
         title="Custom software projects with"
         accent="real business use"
-      />
-      <AnswerGridSection
-        title="What these projects"
-        accent="show"
-        items={projectAnswerCards}
       />
       <PortfolioShowcaseSection introAligned="center" showEyebrow={false} />
       <FaqSection
