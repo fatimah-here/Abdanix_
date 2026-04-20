@@ -1,5 +1,5 @@
 :root{
-  --bg:#08111f;
+  --bg:#ffffff;
   --ink:#e5eef8;
   --ink-soft:#94a3b8;
   --white:#ffffff;
@@ -27,7 +27,7 @@
   --fs-body-lg:14px;
   --fs-heading-xl:clamp(28px, 3.8vw, 44px);
   --fs-heading-lg:clamp(26px, 3.4vw, 38px);
-  --fs-heading-md:clamp(24px, 3vw, 34px);
+  --fs-heading-md:clamp(28px, 3.8vw, 44px);
 }
 
 *{box-sizing:border-box}
@@ -573,7 +573,13 @@ main{display:block}
   position:relative;
   overflow:hidden;
   padding:138px 0 64px;
-  background:linear-gradient(180deg, #0b1220 0%, #08111f 100%);
+  background: linear-gradient(
+  180deg,
+  #0b2c5f 0%,
+  #0d3a6d 40%,
+  #1f6f8b 75%,
+  #eaf4f8 100%
+);
 }
 
 .contact-page-hero{
@@ -1629,15 +1635,18 @@ main{display:block}
   padding:28px 24px 20px;
   border-radius:24px;
   border:1px solid rgba(255,255,255,.08);
-  background:
-    radial-gradient(circle at top left, rgba(11,143,216,.18), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(30,58,95,.35), transparent 34%),
-    linear-gradient(180deg, rgba(15,23,42,.96) 0%, rgba(8,17,31,.98) 100%);
-  box-shadow:
-    0 24px 60px rgba(2,8,23,.28),
-    inset 0 1px 0 rgba(255,255,255,.05);
-  backdrop-filter:blur(10px);
+background: linear-gradient(
+    180deg,
+    rgba(142, 207, 233, 0.5) 0%,   /* invisible at top */
+    rgb(109, 206, 245) 20%,        /* slight blend */
+    rgb(35, 115, 145) 55%,         /* mid buildup */
+    rgb(12, 55, 104) 80%,          /* strong presence */
+    #0b2c5f 100%                   /* deep blue bottom */
+  );
+
+  box-shadow: 0 24px 60px rgba(2, 8, 23, .28);
 }
+   
 
 .footer-grid{
   display:grid;
