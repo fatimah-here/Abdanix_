@@ -638,12 +638,20 @@ main {
   margin: 0;
   font-size: 12px;
 }
-
 .page-hero {
   position: relative;
   overflow: hidden;
   padding: 138px 0 64px;
   background: linear-gradient(180deg, #0b1220 0%, #08111f 100%);
+}
+.projects-page-hero{
+  background:
+    linear-gradient(rgba(11,18,32,.7), rgba(8,17,31,.7)),
+    url('/assets/images/your-image.jpg.jpeg') center/cover no-repeat;
+    position:relative;
+    overflow:hidden;
+    padding:138px 0 64px;
+>>>>>>> 0babb7eee79b74db4cf081ecf429ecac23b0f7ca
 }
 
 .contact-page-hero {

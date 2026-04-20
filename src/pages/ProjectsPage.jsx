@@ -13,6 +13,7 @@ export default function ProjectsPage() {
     <>
       <Seo {...seoPages.projects} />
       <PageHero
+        className="projects-page-hero"
         title="Custom software projects with"
         accent="real business use"
       />
