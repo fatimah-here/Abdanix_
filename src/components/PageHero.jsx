@@ -14,13 +14,7 @@ export default function PageHero({
       <div className="glow glow-two"></div>
 
       <div className="container">
-        {showEyebrow && eyebrow && (
-          <div className="eyebrow">
-            <span className="dot"></span>
-           
-          </div>
-        )}
-
+      
         <h1>
           {title} <span className="accent-text">{accent}</span>
         </h1>
