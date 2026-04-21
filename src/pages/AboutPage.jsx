@@ -8,6 +8,7 @@ export default function AboutPage() {
     <>
       <Seo {...seoPages.about} />
       <PageHero
+      className="about-page-hero"
         eyebrow="About"
         title="The team behind"
         accent="ABDANIX Solutions"

@@ -591,7 +591,7 @@ main {
 .work-heading h2,
 .cta-panel h2,
 .page-hero h1 {
-  color: #fff;
+  color:#0F172A;
   font-size: var(--fs-heading-lg);
 }
 
@@ -681,6 +681,15 @@ main {
     padding:138px 0 64px;
 
 }
+.about-page-hero{
+  background:
+  linear-gradient(rgba(11,18,32,.55), rgba(8,17,31,.55)),
+  url('/assets/images/about-hero.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+}
 
 .contact-page-hero {
   padding-bottom: 40px;
@@ -754,7 +763,7 @@ main {
 .contact-card,
 .legal-card {
   position: relative;
-  background: #0f172a;
+  background:  #ffffff ;
   border: 1px solid rgba(30, 41, 59, .88);
   border-radius: 32px;
   padding: 28px;
@@ -805,7 +814,7 @@ main {
   min-height: 290px;
   padding: 28px 24px 24px;
   border-radius: 30px;
-  background: linear-gradient(180deg, rgba(15, 23, 42, .92), rgba(10, 20, 36, .96));
+  background: #ffffff !important;
   border: 1px solid rgba(56, 189, 248, .12);
   box-shadow: 0 24px 48px -24px rgba(2, 132, 199, .18);
 }
@@ -816,7 +825,7 @@ main {
 }
 
 .service-card h3 {
-  color: #f8fafc;
+  color:  #0a6cab!important;
   font-size: 19px;
   margin-bottom: 12px;
   letter-spacing: -.02em;
@@ -1078,7 +1087,7 @@ main {
 .info-card h3,
 .contact-card h3 {
   margin: 0 0 10px;
-  color: #fff;
+  color: #0a6cab;
   font-size: 18px;
   line-height: 1.2;
 }
@@ -1702,6 +1711,8 @@ main {
   text-transform: uppercase;
 }
 
+/* --- CTA Section: Final Matched & Aligned Version --- */
+
 .cta-panel {
   position: relative;
   overflow: hidden;
@@ -1711,8 +1722,11 @@ main {
   border: 1px solid #e2e8f0; 
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05); 
   text-align: center;
+  /* Ensure children are centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .cta-panel::before {
   content: "";
@@ -1726,12 +1740,61 @@ main {
   z-index: 1;
 }
 
-.cta-panel h2 {
-    color: #0f172a !important; 
+/* --- CTA Section: Final Aligned & Correct Color Version --- */
+
+.cta-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 40px; 
+  border-radius: 40px; 
+  background: #ffffff; 
+  border: 1px solid #e2e8f0; 
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05); 
+  text-align: center;
+  /* Flexbox for vertical alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.cta-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0; 
+}
+
+.cta-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading: Fixed Color and Alignment */
+.cta-panel h2 {
+  color: #0f172a !important; /* Wahi Dark color jo baqi pages par hai */
+  font-weight: 700;
+  font-size: 32px;            /* Size matched with services heading */
+  margin-bottom: 12px;
+  max-width: 800px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+
+/* Paragraph: Fixed Alignment */
 .cta-panel p {
-    color: #475569 !important; 
+  color: #64748b !important; 
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+
+/* Highlighted Text (MERN, Just Code etc) */
+.cta-panel h2 span {
+  color: #0ea5e9 !important; /* Sirf highlight wala hissa blue rahay ga */
 }
 
 .contact-chips {
@@ -1747,16 +1810,17 @@ main {
   align-items: center;
   padding: 8px 18px;
   border-radius: 999px;
-  background: #f1f5f9;       
+  background: #f8fafc;       
   border: 1px solid #e2e8f0; 
-  color: #475569;            
+  color: #64748b;            
   font-size: 12px;
   font-weight: 600;
   transition: all 0.2s ease;
 }
+
 .contact-chip:hover {
   background: #e2e8f0;
-  color: #0f172a;
+  color: #0a6cab;            
   transform: translateY(-2px);
   cursor: pointer;
 }
