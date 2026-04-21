@@ -1705,28 +1705,33 @@ main {
 .cta-panel {
   position: relative;
   overflow: hidden;
-  padding: 48px 40px;
-  border-radius: 32px;
-  background: #0f172a;
-  border: 1px solid rgba(30, 41, 59, .95);
-  box-shadow: 0 30px 60px -18px rgba(2, 132, 199, .18);
+  padding: 60px 40px; 
+  border-radius: 40px; 
+  background: #ffffff; 
+  border: 1px solid #e2e8f0; 
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05); 
   text-align: center;
 }
+
 
 .cta-panel::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: .03;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, .5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, .5) 1px, transparent 1px);
-  background-size: 40px 40px;
+  opacity: 0; 
 }
 
-.cta-panel>* {
+.cta-panel > * {
   position: relative;
-  z-index: 1
+  z-index: 1;
+}
+
+.cta-panel h2 {
+    color: #0f172a !important; 
+}
+
+.cta-panel p {
+    color: #475569 !important; 
 }
 
 .contact-chips {
@@ -1740,13 +1745,20 @@ main {
 .contact-chip {
   display: inline-flex;
   align-items: center;
-  padding: 8px 14px;
+  padding: 8px 18px;
   border-radius: 999px;
-  background: #075985;
-  border: 1px solid rgba(15, 23, 42, .45);
-  color: #cbd5e1;
+  background: #f1f5f9;       
+  border: 1px solid #e2e8f0; 
+  color: #475569;            
   font-size: 12px;
   font-weight: 600;
+  transition: all 0.2s ease;
+}
+.contact-chip:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: translateY(-2px);
+  cursor: pointer;
 }
 
 .contact-grid {
