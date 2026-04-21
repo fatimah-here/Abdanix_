@@ -8,20 +8,21 @@ export default function PageHero({
   className = "",
 }) {
   return (
-    <section className={`page-hero${className ? ` ${className}` : ""}`}>
-      <div className="glow one"></div>
-      <div className="glow two"></div>
-      <div className={`container reveal show${align === "center" ? " page-hero-center" : ""}`}>
-        {showEyebrow && eyebrow ? (
-          <div className="eyebrow">
-            <span className="dot"></span>
-            {eyebrow}
-          </div>
-        ) : null}
+    <section className={`hero ${align} ${className}`}>
+      {/* Background glow elements */}
+      <div className="glow glow-one"></div>
+      <div className="glow glow-two"></div>
+
+      <div className="container">
         <h1>
           {title} <span className="accent-text">{accent}</span>
         </h1>
-        <p>{description}</p>
+
+        <p className="description">{description}</p>
+
+        <div className="hero-actions">
+          <button className="btn-primary">Schedule a free call</button>
+        </div>
       </div>
     </section>
   );
