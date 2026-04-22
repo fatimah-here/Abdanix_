@@ -662,7 +662,7 @@ main {
   padding: 138px 0 64px; 
   background: 
     linear-gradient(rgba(11, 18, 32, 0.60), rgba(8, 17, 31, 0.60)), 
-    url('/assets/images/service-hero.jpg'); 
+    url('/assets/images/service-hero.webp'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -874,8 +874,8 @@ main {
   gap: 22px;
   max-width: 800px;  
   margin: 0 auto;     
-
 }
+
 .answer-card{
     width: 100%;
   max-width: 700px;   /* 👈 controls card size */
@@ -2285,13 +2285,23 @@ background: linear-gradient(
   }
 
   .answer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "leftTop right"
+    "leftBottom right";
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .answer-grid {
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "leftTop right"
-      "leftBottom right";
-    gap: 22px;
+      "leftTop"
+      "leftBottom"
+      "right";
   }
+}
 .answer-card:nth-child(1) {
   grid-area: leftTop;
 }
@@ -2572,4 +2582,53 @@ background: linear-gradient(
   .answer-card.highlight {
     grid-row: span 1;
   }
+}
+.about-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.about-card-header .icon-badge {
+  flex-shrink: 0;
+}
+/* --- Final Service Card Alignment Fix --- */
+
+/* 1. Header wrapper ko sahi karein */
+.service-card-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;      /* Text aur Icon ke beech ka fasla set karein */
+  margin-bottom: 12px !important;
+  min-height: 40px !important; /* Takay sab cards ek jaise lagein */
+}
+
+/* 2. Icon Badge ki purani margins khatam karein */
+.service-card .icon-badge {
+  margin: 0 !important;      /* Purani extra space remove karein */
+  flex-shrink: 0 !important;
+  width: 40px !important;    /* Icon ka size fix karein */
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 3. Heading (Text) ki alignment */
+.service-card-header h3 {
+  margin: 0 !important;      /* Heading ki default margin zero karein */
+  padding: 0 !important;
+  font-size: 1.1rem !important; /* Size check karein agar zyada bada hai */
+  line-height: 1.2 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 4. Card ki overall padding adjustment */
+.service-card {
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
 }

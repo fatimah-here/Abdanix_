@@ -1,5 +1,12 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+// Is line ko update karein
+import { 
+  Globe, Cpu, Smartphone, Users, Search, 
+  BrainCircuit, Code2, Share2, Zap, 
+  LayoutDashboard, BarChart3, ShieldCheck 
+} from "lucide-react";
+
 import {
   aboutPoints,
   contactFaqs,
@@ -406,25 +413,40 @@ export function FaqSection({
   );
 }
 
+const serviceIcons = {
+  WD: <Globe size={24} strokeWidth={1.7} />,
+  AI: <Cpu size={24} strokeWidth={1.7} />,
+  AP: <Smartphone size={24} strokeWidth={1.7} />,
+  CRM: <Users size={24} strokeWidth={1.7} />,
+  SEO: <Search size={24} strokeWidth={1.7} />,
+  ML: <BrainCircuit size={24} strokeWidth={1.7} />,
+  SE: <Code2 size={24} strokeWidth={1.7} />,
+  SM: <Share2 size={24} strokeWidth={1.7} />,
+};
+
+
 export function ServicesSection({ compact = false, showEyebrow = true }) {
-  const items = compact ? services : services;
+  const items = services; 
   return (
     <section className="section editorial-section" id="services">
       <div className="container">
-        <div className="section-heading section-heading-left services-heading reveal show">
 
+        <div className="section-heading section-heading-left services-heading reveal show">
           <h2>Services Built for <span className="accent-text">Business Growth</span></h2>
           <p>From technical execution to growth strategy, ABDANIX provides integrated digital services that help brands launch, optimize and scale faster.</p>
         </div>
+
         <div className="grid services-grid">
           {items.map((service) => (
-            <article
-              className="card service-card reveal show"
-              key={service.title}
-              id={`service-${service.code.toLowerCase()}`}
-            >
-              <div className="icon-badge">{service.code}</div>
-              <h3>{service.title}</h3>
+            <article className="card service-card reveal show" key={service.title}>
+              {/* ✅ Changes yahan se start hain */}
+              <div className="service-card-header">
+                <div className="icon-badge">
+                  {serviceIcons[service.code] || service.code}
+                </div>
+                <h3>{service.title}</h3>
+              </div>
+              {/* ✅ Changes yahan khatam */}
               <p>{service.description}</p>
             </article>
           ))}
@@ -509,13 +531,19 @@ export function ProcessSection() {
   );
 }
 
+const aboutIcons = {
+  PF: <Zap size={24} strokeWidth={1.7} />,
+  BS: <LayoutDashboard size={24} strokeWidth={1.7} />,
+  KP: <BarChart3 size={24} strokeWidth={1.7} />,
+  LT: <ShieldCheck size={24} strokeWidth={1.7} />,
+};
+
 export function AboutSection({ showTeam = false }) {
   return (
     <>
-      <section className="section editorial-section py-20" id="about">
+      <section className="section editorial-section" id="about">
         <div className="container">
-
-          <div className="section-heading center reveal show max-w-3xl mx-auto">
+          <div className="section-heading center reveal show">
             <h2>
               Enterprise Thinking.{" "}
               <span className="accent-text">Operational Precision.</span>
@@ -527,19 +555,23 @@ export function AboutSection({ showTeam = false }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {aboutPoints.map((point) => (
-              <article
-                className="about-card reveal show text-center p-6 rounded-xl shadow-sm"
-                key={point.title}
-              >
-                <div className="icon-badge">{point.code}</div>
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
-              </article>
-            ))}
-          </div>
-
+       <div className="about-points">
+       {aboutPoints.map((point) => (
+       <article
+      className="card about-card reveal show"
+      key={point.title}
+    >
+      <div className="about-card-header">
+        <div className="icon-badge">
+          {aboutIcons[point.code] || point.code}
+        </div>
+        <h3>{point.title}</h3>
+      </div>
+      <p>{point.description}</p>
+    </article>
+  ))}
+</div>
+     
         </div>
       </section>
       {showTeam && null}

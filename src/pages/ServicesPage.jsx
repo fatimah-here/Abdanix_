@@ -25,7 +25,6 @@ export default function ServicesPage() {
         accent="supports growth"
         description="The service mix is designed to cover customer-facing experiences, internal operations, and the optimization work that helps a system compound after launch."
         items={servicesAnswerCards}
-        highlight : true
       />
       <ServicesSection showEyebrow={false} />
       <FaqSection
