@@ -12,7 +12,6 @@ export default function AboutPage() {
         eyebrow="About"
         title="The team behind"
         accent="ABDANIX Solutions"
-        description="ABDANIX combines business systems thinking with practical engineering so digital products stay useful, scalable, and commercially aligned."
       />
       <AboutSection />
       <CtaSection

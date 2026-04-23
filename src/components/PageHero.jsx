@@ -9,7 +9,6 @@ export default function PageHero({
 }) {
   return (
     <section className={`hero ${align} ${className}`}>
-      {/* Background glow elements */}
       <div className="glow glow-one"></div>
       <div className="glow glow-two"></div>
 
@@ -19,10 +18,6 @@ export default function PageHero({
         </h1>
 
         <p className="description">{description}</p>
-
-        <div className="hero-actions">
-          <button className="btn-primary">Schedule a free call</button>
-        </div>
       </div>
     </section>
   );

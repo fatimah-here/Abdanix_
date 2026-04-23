@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-// Is line ko update karein
 import { 
   Globe, Cpu, Smartphone, Users, Search, 
   BrainCircuit, Code2, Share2, Zap, 
@@ -345,20 +344,19 @@ function PortfolioSectionInner({ introAligned = "center", showEyebrow = true }) 
 export function AnswerGridSection({
   eyebrow = "",
   title = "What ABDANIX",
-
   accent = "delivers",
   description = "",
   items = homeAnswerCards,
+  variant = "default", 
 }) {
   return (
-    <section className="section editorial-section answer-section">
+    <section className={`section editorial-section answer-section ${variant === 'services' ? 'services-layout-active' : ''}`}>
       <div className="container">
         <div className="section-heading center reveal show">
           <h2>{title} <span className="accent-text">{accent}</span></h2>
           <p>{description}</p>
         </div>
-
-        <div className="grid answer-grid">
+        <div className={`grid answer-grid ${variant === 'services' ? 'services-row-grid' : ''}`}>
           {items.map((item) => (
             <article
               className={`answer-card reveal show ${item.highlight ? "highlight" : ""}`}
@@ -373,7 +371,6 @@ export function AnswerGridSection({
     </section>
   );
 }
-
 export function FaqSection({
   title = "Frequently asked questions",
   description = "These are the most commonly asked questions.",
@@ -439,14 +436,12 @@ export function ServicesSection({ compact = false, showEyebrow = true }) {
         <div className="grid services-grid">
           {items.map((service) => (
             <article className="card service-card reveal show" key={service.title}>
-              {/* ✅ Changes yahan se start hain */}
               <div className="service-card-header">
                 <div className="icon-badge">
                   {serviceIcons[service.code] || service.code}
                 </div>
                 <h3>{service.title}</h3>
               </div>
-              {/* ✅ Changes yahan khatam */}
               <p>{service.description}</p>
             </article>
           ))}
@@ -555,27 +550,25 @@ export function AboutSection({ showTeam = false }) {
             </p>
           </div>
 
-       <div className="about-points">
-       {aboutPoints.map((point) => (
-       <article
+      <div className="about-points">
+  {aboutPoints.map((point) => (
+    <article
       className="card about-card reveal show"
       key={point.title}
     >
-      <div className="about-card-header">
-        <div className="icon-badge">
-          {aboutIcons[point.code] || point.code}
-        </div>
-        <h3>{point.title}</h3>
+      <div className="icon-badge">
+        {aboutIcons[point.code] || point.code}
       </div>
+      <h3>{point.title}</h3>
       <p>{point.description}</p>
     </article>
   ))}
 </div>
-     
-        </div>
-      </section>
-      {showTeam && null}
-    </>
+
+      </div>
+    </section>
+    {showTeam && null}
+  </>
   );
 }
 
