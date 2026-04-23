@@ -1,5 +1,17 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import TechSection from "../components/TechSection";
+import {
+  FaBullhorn,
+  FaChartLine,
+  FaMobileAlt,
+  FaCloud,
+  FaSearch,
+  FaRobot,
+  FaLaptopCode,
+  FaCogs
+} from "react-icons/fa";
+
 import {
   aboutPoints,
   contactFaqs,
@@ -204,7 +216,20 @@ function TechnologyIcon({ type }) {
     </svg>
   );
 }
+function ServiceIcon({ type }) {
+  const icons = {
+    "Website Development": <FaLaptopCode />,
+    "AI Integrated Websites": <FaChartLine />,
+    "App Development": <FaMobileAlt />,
+    "CRM Management": <FaCloud />,
+    "SEO Optimization": <FaSearch />,
+    "AI Solutions and ML": <FaRobot />,
+    "Custom Software Engineering": <FaCogs />,
+    "Social Media Handling": <FaBullhorn />,
+  };
 
+  return icons[type] || <FaCode />;
+}
 const technologyLayouts = [
   { x: "10%", y: "18%", rotate: "-2deg", driftX: "12px", driftY: "-10px", duration: "8.4s", delay: "0s" },
   { x: "24%", y: "14%", rotate: "1deg", driftX: "-10px", driftY: "12px", duration: "9.2s", delay: ".5s" },
@@ -228,7 +253,15 @@ const technologyLayouts = [
   { x: "50%", y: "76%", rotate: "-2deg", driftX: "10px", driftY: "-11px", duration: "8.8s", delay: "1.7s" },
   { x: "67%", y: "72%", rotate: "1deg", driftX: "-12px", driftY: "10px", duration: "9.6s", delay: ".4s" },
 ];
-
+function GlowDivider({ title }) {
+  return (
+    <div className="glow-divider">
+      <div className="glow-line left" />
+      <span className="accent-text">{title}</span>
+      <div className="glow-line right" />
+    </div>
+  );
+}
 function PortfolioSectionInner({ introAligned = "center", showEyebrow = true }) {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -245,7 +278,9 @@ function PortfolioSectionInner({ introAligned = "center", showEyebrow = true }) 
         {showEyebrow ? (
           <div className="eyebrow"><span className="dot"></span> Previous Work</div>
         ) : null}
-        <h2>Projects That Reflect <span className="accent-text">Real Business Impact</span></h2>
+        <h2>
+          <GlowDivider title="Projects That Reflect Real Business Impact" />
+        </h2>
         <p>
           We build scalable web platforms, AI-powered systems, and mobile
           applications designed for real-world usage, performance, and growth.
@@ -338,7 +373,6 @@ function PortfolioSectionInner({ introAligned = "center", showEyebrow = true }) 
 export function AnswerGridSection({
   eyebrow = "",
   title = "What ABDANIX",
-
   accent = "delivers",
   description = "",
   items = homeAnswerCards,
@@ -347,7 +381,7 @@ export function AnswerGridSection({
     <section className="section editorial-section answer-section">
       <div className="container">
         <div className="section-heading center reveal show">
-          <h2>{title} <span className="accent-text">{accent}</span></h2>
+          <h2><GlowDivider title={`${title} ${accent}`} /></h2>
           <p>{description}</p>
         </div>
 
@@ -358,7 +392,14 @@ export function AnswerGridSection({
               key={item.title}
             >
               <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <p>
+                {item.description.split(". ").map((line, i) => (
+                  <span key={i}>
+                    {line}.
+                    <br />
+                  </span>
+                ))}
+              </p>
             </article>
           ))}
         </div>
@@ -377,7 +418,7 @@ export function FaqSection({
       <div className="container">
 
         <div className="section-heading center">
-          <h2>{title}</h2>
+          <h2><GlowDivider title={title} /></h2>
           <p>{description}</p>
         </div>
 
@@ -405,25 +446,35 @@ export function FaqSection({
     </section>
   );
 }
+export function ServicesSection({ compact = false }) {
+  // 
+  const items = compact ? services.slice(0, 3) : services;
 
-export function ServicesSection({ compact = false, showEyebrow = true }) {
-  const items = compact ? services : services;
   return (
     <section className="section editorial-section" id="services">
       <div className="container">
-        <div className="section-heading section-heading-left services-heading reveal show">
 
-          <h2>Services Built for <span className="accent-text">Business Growth</span></h2>
-          <p>From technical execution to growth strategy, ABDANIX provides integrated digital services that help brands launch, optimize and scale faster.</p>
+        <div className="section-heading section-heading-left services-heading">
+          <h2>
+            <GlowDivider title="Services Built for Business Growth" />
+          </h2>
+          <p>
+            From technical execution to growth strategy, ABDANIX provides
+            integrated digital services that help brands  launch, optimize and scale faster..
+          </p>
         </div>
+
         <div className="grid services-grid">
           {items.map((service) => (
             <article
-              className="card service-card reveal show"
-              key={service.title}
+              className="service-card"
+              key={service.id || service.title} // 
               id={`service-${service.code.toLowerCase()}`}
             >
-              <div className="icon-badge">{service.code}</div>
+              <div className="icon-badge">
+                <ServiceIcon type={service.title} />
+              </div>
+
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </article>
@@ -433,12 +484,12 @@ export function ServicesSection({ compact = false, showEyebrow = true }) {
     </section>
   );
 }
-
 export function WorkSection() {
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 4);
 
   return (null);
 }
+
 
 export function PortfolioShowcaseSection({ introAligned = "left", showEyebrow = true }) {
   return (
@@ -455,7 +506,7 @@ export function ProcessSection() {
     <section className="section editorial-section process-section">
       <div className="container framework">
         <div className="section-heading center reveal show">
-          <h2> <span className="accent-text">How We Deliver</span></h2>
+          <h2> <GlowDivider title="How We Deliver" /></h2>
           <p>A structured delivery model that keeps strategy, architecture, execution, and optimization aligned from day one.</p>
         </div>
         <div className="framework-line"></div>
@@ -468,42 +519,43 @@ export function ProcessSection() {
             </article>
           ))}
         </div>
+        <TechSection>
+          <div className="tech-heading reveal show">
+            <h3><GlowDivider title="Technologies" /></h3>
+            <p>
+              We build with proven platforms and modern tooling to deliver
+              reliable products, clean integrations and room to scale.
+            </p>
+          </div>
 
-        <div className="tech-heading reveal show">
-          <h3>Technologies</h3>
-          <p>
-            We build with proven platforms and modern tooling to deliver
-            reliable products, clean integrations and room to scale.
-          </p>
-        </div>
-
-        <div className="tech-stage reveal show">
-          {technologies.map((technology, index) => {
-            const layout = technologyLayouts[index % technologyLayouts.length];
-            return (
-              <div
-                className="tech-float-node"
-                key={technology.label}
-                style={{
-                  "--tech-x": layout.x,
-                  "--tech-y": layout.y,
-                  "--tech-rotate": layout.rotate,
-                  "--tech-drift-x": layout.driftX,
-                  "--tech-drift-y": layout.driftY,
-                  "--tech-duration": layout.duration,
-                  "--tech-delay": layout.delay,
-                }}
-              >
-                <span className="tech-pill tech-float-pill">
-                  <span className="tech-pill-icon" aria-hidden="true">
-                    <TechnologyIcon type={technology.icon} />
+          <div className="tech-stage reveal show">
+            {technologies.map((technology, index) => {
+              const layout = technologyLayouts[index % technologyLayouts.length];
+              return (
+                <div
+                  className="tech-float-node"
+                  key={technology.label}
+                  style={{
+                    "--tech-x": layout.x,
+                    "--tech-y": layout.y,
+                    "--tech-rotate": layout.rotate,
+                    "--tech-drift-x": layout.driftX,
+                    "--tech-drift-y": layout.driftY,
+                    "--tech-duration": layout.duration,
+                    "--tech-delay": layout.delay,
+                  }}
+                >
+                  <span className="tech-pill tech-float-pill">
+                    <span className="tech-pill-icon" aria-hidden="true">
+                      <TechnologyIcon type={technology.icon} />
+                    </span>
+                    {technology.label}
                   </span>
-                  {technology.label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
+                </div>
+              );
+            })}
+          </div>
+        </TechSection>
       </div>
     </section>
   );
@@ -517,8 +569,7 @@ export function AboutSection({ showTeam = false }) {
 
           <div className="section-heading center reveal show max-w-3xl mx-auto">
             <h2>
-              Enterprise Thinking.{" "}
-              <span className="accent-text">Operational Precision.</span>
+              <GlowDivider title="Enterprise Thinking Operational Precision." />
             </h2>
             <p>
               ABDANIX combines engineering discipline with business strategy so
@@ -548,29 +599,53 @@ export function AboutSection({ showTeam = false }) {
 }
 
 export function CtaSection({
-  eyebrow = "Initialize Project",
   title = "Start building your",
   accent = "technology architecture",
-  description = "Ready to modernize your platforms, workflows, and customer systems? Partner with a team that treats software delivery like business-critical infrastructure.",
+  description = "Ready to modernize your platforms, and customer systems? Partner with a team that treats software delivery like business-critical infrastructure.",
   secondaryLabel = "Explore Operations",
   secondaryTo = "/services",
 }) {
   return (
-    <section className="section editorial-section">
+    <section className="cta-section"> {/* ✅ NEW */}
       <div className="container">
-        <div className="cta-panel reveal show">
+        <div className="cta-panel"> {/* (same name but redesigned) */}
 
-          <h2>{title} <span className="accent-text">{accent}</span></h2>
+          {/* ✅ NEW glow layers */}
+          <div className="cta-glow one"></div>
+          <div className="cta-glow two"></div>
+
+          <h2>
+            {title} <span className="accent-text">{accent}</span>
+          </h2>
+
           <p>{description}</p>
-          <div className="hero-actions" style={{ justifyContent: "center" }}>
-            <Link className="btn-primary" to="/contact">Book Initial Consultation</Link>
-            <Link className="btn-secondary" to={secondaryTo}>{secondaryLabel}</Link>
+
+          {/* 🔁 REPLACE hero-actions with this */}
+          <div className="cta-actions">
+            <Link className="btn-primary" to="/contact">
+              Book Initial Consultation
+            </Link>
+            <Link className="btn-secondary" to={secondaryTo}>
+              {secondaryLabel}
+            </Link>
           </div>
-          <div className="contact-chips">
-            <span className="contact-chip">info@abdanixsolutions.com</span>
-            <span className="contact-chip">+92 324 116 2060</span>
-            <span className="contact-chip">Rawalpindi / Islamabad, Pakistan</span>
+
+          {/* 🔁 REPLACE contact-chips with this */}
+          <div className="cta-contact">
+            <div className="cta-pill">
+              <span>📧</span>
+              info@abdanixsolutions.com
+            </div>
+            <div className="cta-pill">
+              <span>📞</span>
+              +92 324 116 2060
+            </div>
+            <div className="cta-pill">
+              <span>📍</span>
+              Rawalpindi / Islamabad, Pakistan
+            </div>
           </div>
+
         </div>
       </div>
     </section>

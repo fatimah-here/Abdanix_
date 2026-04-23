@@ -71,7 +71,7 @@ export const homeAnswerCards = [
   {
     title: "How projects are delivered",
     description:
-      "Each engagement moves through discovery, architecture, execution, and optimization so strategy, engineering, and commercial priorities stay aligned from the start.",
+      "Projects follow a structured process starting with discovery and planning to define goals and scalable solutions. During execution, teams develop and test using agile practices to ensure quality and efficiency. Clear communication and regular updates keep stakeholders aligned at every stage.Finally, optimization and support focus on performance, continuous improvement, and long-term reliability. This approach ensures timely delivery, reduces risks, and delivers secure, scalable solutions that support business growth.",
     highlight: true,
   },
 ];
@@ -561,4 +561,9 @@ export const team = [
     description:
       "Builds product systems, experiments quickly, and pushes future-ready development ideas.",
   },
+];
+export const positions = [
+  { tx: 0, ty: 0, rot: 0, sc: 1, op: 1 }, // front — rightmost
+  { tx: -22, ty: 20, rot: 4, sc: 0.93, op: 0.8 }, // middle
+  { tx: -44, ty: 40, rot: 8, sc: 0.86, op: 0.55 }, // back — leftmost
 ];

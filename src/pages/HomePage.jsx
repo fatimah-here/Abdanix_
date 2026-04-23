@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
+import HeroCards from "../components/HeroCards";
+
 import {
   AboutSection,
   AnswerGridSection,
@@ -20,40 +22,30 @@ export default function HomePage() {
         <div className="glow two"></div>
 
         <div className="container hero-grid">
-          {/* LEFT CONTENT */}
+          {/* LEFT */}
           <div className="hero-copy reveal show">
-            
-
             <h1>
-              Unlock the full potential <br />
-              of your <span className="accent-text">Salesforce</span>
+              Build Secure, Scalable <br />
+              <span className="accent-text">Digital Systems</span>
             </h1>
 
             <p>
-              Unlock Salesforce to streamline operations, enhance customer
-              relationships, and drive growth across your business.
+              We build websites, apps and business tools that help your company grow faster.
             </p>
 
             <div className="hero-actions">
               <Link className="btn-primary" to="/contact">
-                Schedule a free call
+                Explore Services
               </Link>
-            </div>
-
-            {/* Rating row */}
-            <div className="hero-rating">
-              <span>Salesforce Rating ⭐⭐⭐⭐⭐</span>
-              <span>Certified Experts 👨‍💻👩‍💻</span>
+              <Link className="btn-secondary" to="/contact">
+                Book strategy call
+              </Link>
             </div>
           </div>
 
-          {/* RIGHT VISUAL */}
+          {/* RIGHT */}
           <div className="hero-visual">
-            <div className="hero-circle"></div>
-
-            <div className="hero-card">
-              <span>Intelligent case routing</span>
-            </div>
+            <HeroCards /> {/* ✅ CORRECT */}
           </div>
         </div>
       </section>
@@ -62,10 +54,9 @@ export default function HomePage() {
         title="What ABDANIX Solutions"
         accent="does"
         description="This section answers the core questions buyers and AI systems usually need first: what the company builds, who it serves, and how projects are delivered."
-        highlight : true
+        highlight={true}
       />
-      <ServicesSection  />
-      <WorkSection />
+      <ServicesSection />
       <ProcessSection />
 
       <FaqSection
